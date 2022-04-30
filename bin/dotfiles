@@ -21,11 +21,11 @@ sub_update () {
     npm update -g
   else
     linux-update
-    sudo npm install npm -g
-    sudo npm update -g
+    sudo -E npm install npm -g
+    sudo -E npm update -g
   fi
-  install-rls
   update_nvim
+  update_vcpkg
 }
 
 sub_dock () {
@@ -34,7 +34,7 @@ sub_dock () {
 
 sub_updatenvim () {
   update_nvim
-  # nvim +PackerSync +quit +quit
+  nvim +'call dein#update()' +quit +quit
 }
 
 case $COMMAND_NAME in

@@ -27,6 +27,7 @@ yes | paru -S bat       \
     fish                \
     go                  \
     fd                  \
+    autojump            \
     lolcat
 
 

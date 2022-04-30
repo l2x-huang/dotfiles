@@ -35,7 +35,7 @@ packages-macos: brew
 
 packages-linux:
 	$(DOTFILES_DIR)/install/linux.sh
-	sudo npm install -g $(shell cat install/npmfile)
+	sudo -E npm install -g $(shell cat install/npmfile)
 	$(DOTFILES_DIR)/install/common.sh
 
 link: stow-$(OS)

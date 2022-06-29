@@ -30,17 +30,21 @@ export LESS='-RQM'
 export SHELL=zsh
 export GOPATH="$HOME/.go"
 export PATH="$HOME/.local/bin/vcpkg:$PATH"
-export PATH="$HOME/.local/bin:$HOME/.dotfiles/bin:/usr/local/bin:$GOPATH/bin:$HOME/.cargo/bin:$HOME/.deno/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.dotfiles/bin:/usr/local/bin:/sbin:$GOPATH/bin:$HOME/.cargo/bin:$HOME/.deno/bin:$PATH"
 export PATH="$HOME/.local/third-party/linux/release/bin:$PATH"
+export PATH="/opt/go/bin:$HOME/.go/bin:$PATH"
 export MANPAGER='nvim --cmd "set laststatus=0" --clean +Man\!'
 export CPM_SOURCE_CACHE="$HOME/.cache/CPM"
 export VCPKG_FORCE_SYSTEM_BINARIES=1
 
 export UID=`id -u`
 export GID=`id -g`
+
+# use clang as default compile
 export CC=clang
 export CXX=clang++
 export CXXFLAGS='-fPIC -stdlib=libc++'
+export LDFLAGS='-stdlib=libc++'
 
 #---- accept-line-with-url ---#
 export WWW_BROWSER="w3m"
@@ -304,6 +308,10 @@ alias vim="TERM=xterm-256color nvim --listen $HOME/.cache/nvim/server.pipe"
 #alias gn=goneovim
 alias nvui='NVIM_GUI=1 nvui &'
 
+if ! command -v fd; then
+  alias fd=fdfind
+fi
+alias cmaked="cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -GNinja -DCMAKE_BUILD_TYPE=Debug -DUSE_CCACHE=ON -DUSE_SANITIZER='Address;Undefined' -DUSE_STATIC_ANALYZER='clang-tidy'"
 
 #####################################################################
 # keybinds
@@ -343,6 +351,7 @@ if [[ "$OSTYPE" =~ ^darwin ]]; then
   [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 else
   [[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
+  [[ -s /usr/share/autojump/autojump.sh ]] && source /usr/share/autojump/autojump.sh
 fi
 
 #####################################################################

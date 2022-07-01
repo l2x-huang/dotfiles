@@ -3,7 +3,7 @@
 set -e
 cd "$(dirname "$0")/.."
 DOTFILES_ROOT=$(pwd -P)
-source "$DOTFILES_ROOT/script/log.sh"
+source "$DOTFILES_ROOT/install/log.sh"
 
 mkdir -p  ${HOME}/.zsh
 cd ${HOME}/.zsh
@@ -33,3 +33,4 @@ if [ ! -d ~/.zsh/zsh-sticky-shift ]; then
   git clone https://github.com/4513ECHO/zsh-sticky-shift
 fi
 
+success 'zsh plugins installed.'

@@ -3,7 +3,7 @@
 set -e
 cd "$(dirname "$0")/.."
 DOTFILES_ROOT=$(pwd -P)
-source "$DOTFILES_ROOT/script/log.sh"
+source "$DOTFILES_ROOT/install/log.sh"
 LOCAL_BIN=${HOME}/.local/bin
 LOCAL_DATA=${HOME}/.local/share
 
@@ -80,5 +80,8 @@ setup_nextword() {
 check_required
 setup_nextword
 setup_vcpkg
-setup_lua_lsp
+#setup_lua_lsp
+
+info 'python package installing'
+pip install docker-compose cmake-language-server python-lsp-server
 success 'all done'

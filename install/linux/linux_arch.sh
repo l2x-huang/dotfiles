@@ -9,6 +9,7 @@ yes | paru -S bat       \
     ninja               \
     cmake               \
     gdb                 \
+    gzip                \
     git                 \
     npm                 \
     lsd                 \
@@ -24,7 +25,7 @@ yes | paru -S bat       \
     docker-compose      \
     tmux                \
     fzf                 \
-    fish                \
+    deno                \
     go                  \
     fd                  \
     autojump            \

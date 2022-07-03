@@ -33,6 +33,7 @@ export PATH="$HOME/.local/bin/vcpkg:$PATH"
 export PATH="$HOME/.local/bin:$HOME/.dotfiles/bin:/usr/local/bin:/sbin:$GOPATH/bin:$HOME/.cargo/bin:$HOME/.deno/bin:$PATH"
 export PATH="$HOME/.local/third-party/linux/release/bin:$PATH"
 export PATH="/opt/go/bin:$HOME/.go/bin:$PATH"
+export PATH="/snap/bin:$PATH"
 export MANPAGER='nvim --cmd "set laststatus=0" --clean +Man\!'
 export CPM_SOURCE_CACHE="$HOME/.cache/CPM"
 export VCPKG_FORCE_SYSTEM_BINARIES=1

@@ -79,7 +79,7 @@ hook_source = '''
 
   if has('nvim')
     call ddc#custom#patch_filetype(
-            \ ['typescript', 'go', 'python'], 'sources',
+            \ ['typescript', 'go', 'python', 'dart'], 'sources',
             \ ['input', 'nvim-lsp', 'around', 'neosnippet']
             \ )
     call ddc#custom#patch_filetype(
@@ -266,7 +266,7 @@ on_source = 'ddc.vim'
 [[plugins]]
 repo = 'neovim/nvim-lspconfig'
 depends = 'impatient.nvim'
-on_ft = ['c', 'cpp', 'cmake', 'typescript', 'go', 'python']
+on_ft = ['c', 'cpp', 'cmake', 'dart', 'typescript', 'go', 'python']
 if = 'has("nvim")'
 depends = 'ddc.vim'
 hook_source = '''
@@ -299,6 +299,7 @@ end
 local lsp = require 'lspconfig'
 lsp.denols.setup{ on_attach = on_attach }
 lsp.gopls.setup{ on_attach = on_attach }
+lsp.dartls.setup{ on_attach = on_attach }
 lsp.pylsp.setup{ on_attach = on_attach }
 lsp.cmake.setup{ on_attach = on_attach }
 

@@ -309,7 +309,7 @@ alias vim="TERM=xterm-256color nvim --listen $HOME/.cache/nvim/server.pipe"
 #alias gn=goneovim
 alias nvui='NVIM_GUI=1 nvui &'
 
-if ! command -v fd; then
+if ! command -v fd > /dev/null; then
   alias fd=fdfind
 fi
 alias cmaked="cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -GNinja -DCMAKE_BUILD_TYPE=Debug -DUSE_CCACHE=ON -DUSE_SANITIZER='Address;Undefined' -DUSE_STATIC_ANALYZER='clang-tidy'"

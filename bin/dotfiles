@@ -25,6 +25,7 @@ sub_update () {
     sudo -E npm update -g
   fi
   update_nvim
+  update_pip
   update_vcpkg
 }
 

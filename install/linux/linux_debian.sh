@@ -23,6 +23,7 @@ sudo -E apt install  -y \
   netcat                \
   tmux                  \
   ninja-build           \
+  pkg-config libcurl4-openssl-dev libssl-dev \
   build-essential
 
 

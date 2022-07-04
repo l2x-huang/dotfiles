@@ -10,12 +10,12 @@ if [[ "$OSTYPE" =~ ^darwin ]]; then
 fi
 
 user 'install linux package...'
-source /etc/os-release
+ID=$(awk -F= '/^NAME/{print $2}' /etc/os-release | awk -F ' ' '{print $1}' | awk -F '\"' '{print $2}')
 case $ID in
-debian|ubuntu|devuan)
+Debian|Ubuntu|Devuan)
   $DOTFILES_ROOT/install/linux/linux_debian.sh
   ;;
-arch|manjaro)
+Arch|Manjaro)
   $DOTFILES_ROOT/install/linux/linux_arch.sh
   ;;
 *)

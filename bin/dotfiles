@@ -39,7 +39,7 @@ sub_updatenvim () {
 }
 
 case $COMMAND_NAME in
-  "" | "-h" | "--help")
+  "" | "-h" | "--help" | "help")
     sub_help
     ;;
   *)

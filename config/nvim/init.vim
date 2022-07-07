@@ -7,14 +7,19 @@ function! AdjustBorder() abort
 endfunction
 
 autocmd MyAutoCmd ColorScheme * call AdjustBorder()
-
-" color palenight
-color candy
-set mouse=ni
-
-" color ayu
 " autocmd MyAutoCmd FileType c,cpp color codedark
-" color gruvbox
-" color codedark
-" color candy
-" color janah
+
+
+" defer settings
+lua <<EOF
+vim.defer_fn(function()
+  vim.cmd [[
+    set mouse=ni
+    color candy
+    " color gruvbox
+    " color codedark
+    " color janah
+    " color ayu
+  ]]
+end, 0)
+EOF

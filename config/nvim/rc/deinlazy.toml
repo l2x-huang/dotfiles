@@ -441,8 +441,8 @@ function! AdjustColor() abort
   highlight! link TSVariableBuiltin CandyLime
 endfunction
 
-call AdjustTreesitterColor()
-call AdjustColor()
+" call AdjustTreesitterColor()
+" call AdjustColor()
 autocmd MyAutoCmd ColorScheme * call AdjustTreesitterColor()
 autocmd MyAutoCmd ColorScheme candy call AdjustColor()
 '''

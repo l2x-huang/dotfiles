@@ -12,7 +12,7 @@ check_command() {
     exit 1
   fi
 
-  if ! command -v $1; then
+  if ! command -v $1 > /dev/null; then
     echo "Error command: $@"
     exit 1
   fi

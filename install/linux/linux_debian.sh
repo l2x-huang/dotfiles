@@ -27,20 +27,36 @@ sudo -E apt install  -y \
   build-essential
 
 
+ln_helper() {
+  if [ ! -f $2 ]; then
+    sudo ln -s $1 $2
+  fi
+}
+
 # clang & libc++ & clangd
-if ! command -v clang; then
-  bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
-  sudo -E apt install -y clangd libc++-14-dev libc++abi-14-dev
+if ! command -v clang > /dev/null; then
+  wget -c https://apt.llvm.org/llvm.sh
+  LLVM_VERSION=$(sed -n '/^CURRENT_LLVM_STABLE/'p ${PWD}/llvm.sh  | awk -F= '{print $2}')
+  chmod +x "${PWD}/llvm.sh"
+  sudo -E "${PWD}/llvm.sh"
+  rm -f "${PWD}/llvm.sh"
+  sudo -E apt install -y clangd-${LLVM_VERSION} libc++-${LLVM_VERSION}-dev libc++abi-${LLVM_VERSION}-dev
+  ln_helper /usr/bin/clang-${LLVM_VERSION} /usr/bin/clang
+  ln_helper /usr/bin/clangd-${LLVM_VERSION} /usr/bin/clangd
+  ln_helper /usr/bin/clang++-${LLVM_VERSION} /usr/bin/clang++
+  ln_helper /usr/bin/clang-tidy-${LLVM_VERSION} /usr/bin/clang-tidy
+  ln_helper /usr/bin/clang-format-${LLVM_VERSION} /usr/bin/clang-format
+  ln_helper /usr/bin/lldb-${LLVM_VERSION} /usr/bin/lldb
 fi
 
-if ! command -v deno; then
+if ! command -v deno > /dev/null; then
   curl -fsSL https://deno.land/install.sh | sh
 fi
 
-if ! command -v lazygit; then
+if ! command -v lazygit > /dev/null; then
   wget -qO- https://github.com/jesseduffield/lazygit/releases/download/v0.34/lazygit_0.34_Linux_x86_64.tar.gz | sudo -E tar -xvz -C /usr/local/bin/
 fi
 
-if ! command -v lazydocker; then
+if ! command -v lazydocker > /dev/null; then
   wget -qO- https://github.com/jesseduffield/lazydocker/releases/download/v0.18.1/lazydocker_0.18.1_Linux_x86_64.tar.gz | sudo -E tar -xvz -C /usr/local/bin/
 fi

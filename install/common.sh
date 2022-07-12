@@ -83,5 +83,5 @@ setup_vcpkg
 #setup_lua_lsp
 
 info 'python package installing'
-pip install docker-compose cmake-language-server python-lsp-server cmake-format
+pip install docker-compose cmake-language-server python-lsp-server cmake-format pynvim
 success 'all done'

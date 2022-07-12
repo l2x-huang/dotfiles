@@ -15,6 +15,7 @@ lua <<EOF
 vim.defer_fn(function()
   vim.cmd [[
     set mouse=ni
+    set nu
     color candy
     " color gruvbox
     " color codedark

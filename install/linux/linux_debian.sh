@@ -60,3 +60,9 @@ fi
 if ! command -v lazydocker > /dev/null; then
   wget -qO- https://github.com/jesseduffield/lazydocker/releases/download/v0.18.1/lazydocker_0.18.1_Linux_x86_64.tar.gz | sudo -E tar -xvz -C /usr/local/bin/
 fi
+
+if ! command -v nvim > /dev/null; then
+  wget -c https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb
+  sudo dpkg -i nvim-linux64.deb
+  rm -f nvim-linux64.deb
+fi

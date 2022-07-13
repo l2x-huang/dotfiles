@@ -67,3 +67,6 @@ repo = 'ayu-theme/ayu-vim'
 
 [[plugins]]
 repo = 'mhinz/vim-startify'
+
+[[plugins]]
+repo = 'rafi/awesome-vim-colorschemes'

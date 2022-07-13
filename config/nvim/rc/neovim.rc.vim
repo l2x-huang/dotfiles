@@ -63,5 +63,5 @@ if has('win32')
   set guifont=Firge:h13
 else
   " set guifont=Courier\ 10\ Pitch:h14
-  set guifont=CaskaydiaCove\ Nerd\ Font:h12
+  set guifont=CaskaydiaCove\ Nerd\ Font:h10.5
 endif

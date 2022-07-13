@@ -42,10 +42,10 @@ export UID=`id -u`
 export GID=`id -g`
 
 # use clang as default compile
-export CC=clang
-export CXX=clang++
-export CXXFLAGS='-fPIC -stdlib=libc++'
-export LDFLAGS='-stdlib=libc++'
+# export CC=clang
+# export CXX=clang++
+# export CXXFLAGS='-fPIC -stdlib=libc++'
+# export LDFLAGS='-stdlib=libc++'
 
 #---- accept-line-with-url ---#
 export WWW_BROWSER="w3m"

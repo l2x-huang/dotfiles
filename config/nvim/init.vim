@@ -7,6 +7,7 @@ function! AdjustBorder() abort
 endfunction
 
 autocmd MyAutoCmd ColorScheme * call AdjustBorder()
+autocmd MyAutoCmd ColorScheme candy set nocursorline
 " autocmd MyAutoCmd FileType c,cpp color codedark
 
 
@@ -14,12 +15,13 @@ autocmd MyAutoCmd ColorScheme * call AdjustBorder()
 lua <<EOF
 vim.defer_fn(function()
   vim.cmd [[
+    set cursorline
     set mouse=ni
     set nu
-    color candy
+    " color candy
     " color gruvbox
     " color codedark
-    " color janah
+    color janah
     " color ayu
   ]]
 end, 0)

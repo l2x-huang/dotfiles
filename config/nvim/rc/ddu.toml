@@ -94,6 +94,9 @@ call ddu#custom#patch_global({
     \     'action': {
     \       'defaultAction': 'do',
     \     },
+    \     'colorscheme': {
+    \       'defaultAction': 'set',
+    \     },
     \   },
     \   'actionOptions': {
     \     'narrow': {
@@ -346,4 +349,8 @@ on_source = 'ddu.vim'
 
 [[plugins]]
 repo = 'Shougo/ddu-source-buffer'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = '4513ECHO/ddu-source-colorscheme'
 on_source = 'ddu.vim'

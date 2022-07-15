@@ -65,8 +65,11 @@ repo = 'drewtempelmeyer/palenight.vim'
 [[plugins]]
 repo = 'ayu-theme/ayu-vim'
 
-[[plugins]]
-repo = 'mhinz/vim-startify'
+# [[plugins]]
+# repo = 'mhinz/vim-startify'
+
+# [[plugins]]
+# repo = 'rafi/awesome-vim-colorschemes'
 
 [[plugins]]
-repo = 'rafi/awesome-vim-colorschemes'
+repo = 'chriskempson/base16-vim'

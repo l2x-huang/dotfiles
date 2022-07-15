@@ -15,14 +15,19 @@ autocmd MyAutoCmd ColorScheme candy set nocursorline
 lua <<EOF
 vim.defer_fn(function()
   vim.cmd [[
+    " let base16colorspace=256
     set cursorline
     set mouse=ni
     set nu
+    set rnu
     " color candy
     " color gruvbox
     " color codedark
-    color janah
+    " color janah
     " color ayu
+    " color onehalfdark
+    " color base16-default-dark
+    color base16-oceanicnext
   ]]
 end, 0)
 EOF

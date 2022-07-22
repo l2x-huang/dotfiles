@@ -193,22 +193,16 @@ xnoremap p   P
 " Open in UTF-8 again.
 command! -bang -bar -complete=file -nargs=? Utf8
       \ edit<bang> ++enc=utf-8 <args>
-" Open in iso-2022-jp again.
-command! -bang -bar -complete=file -nargs=? Iso2022jp
-      \ edit<bang> ++enc=iso-2022-jp <args>
 " Open in Shift_JIS again.
-command! -bang -bar -complete=file -nargs=? Cp932
-      \ edit<bang> ++enc=cp932 <args>
-" Open in EUC-jp again.
-command! -bang -bar -complete=file -nargs=? Euc
-      \ edit<bang> ++enc=euc-jp <args>
+command! -bang -bar -complete=file -nargs=? Cp936
+      \ edit<bang> ++enc=cp936 <args>
 " Open in UTF-16 again.
 command! -bang -bar -complete=file -nargs=? Utf16
       \ edit<bang> ++enc=ucs-2le <args>
 
 " Tried to make a file note version.
 command! WUtf8 setlocal fenc=utf-8
-command! WCp932 setlocal fenc=cp932
+command! WCp936 setlocal fenc=cp936
 
 " Appoint a line feed.
 command! -bang -complete=file -nargs=? WUnix

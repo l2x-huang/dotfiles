@@ -27,7 +27,8 @@ vim.defer_fn(function()
     " color ayu
     " color onehalfdark
     " color base16-default-dark
-    color base16-oceanicnext
+    " color base16-oceanicnext
+    color base16-google-dark
   ]]
 end, 0)
 EOF

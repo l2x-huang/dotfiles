@@ -159,7 +159,7 @@ else
 endif
 
 " Always disable statusline.
-set laststatus=0
+set laststatus=2
 " Height of the command line.
 try
   set cmdheight=0
@@ -182,8 +182,13 @@ let &g:titlestring =
 set showtabline=0
 
 " Set statusline.
-let &g:statusline =
-      \ " %=%{printf('%'.(len(line('$'))+2).'d/%d',line('.'),line('$'))}"
+let &g:statusline="%{winnr('$')>1?'['.winnr().'/'.winnr('$')"
+      \ . ".(winnr('#')==winnr()?'#':'').']':''}\ "
+      \ . "%{(&previewwindow?'[preview] ':'').expand('%:t')}"
+      \ . "\ %=%{(winnr('$')==1 || winnr('#')!=winnr()) ?
+      \ '['.(&filetype!=''?&filetype.',':'')"
+      \ . ".(&fenc!=''?&fenc:&enc).','.&ff.']' : ''}"
+      \ . "%m%{printf('%'.(len(line('$'))+2).'d/%d',line('.'),line('$'))}"
 
 " Note: wrap option is very slow!
 set nowrap

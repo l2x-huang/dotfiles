@@ -20,15 +20,7 @@ vim.defer_fn(function()
     set mouse=ni
     set nu
     set rnu
-    " color candy
-    " color gruvbox
-    " color codedark
-    " color janah
-    " color ayu
-    " color onehalfdark
-    " color base16-default-dark
-    " color base16-oceanicnext
-    color base16-google-dark
+    color candy
   ]]
 end, 0)
 EOF
